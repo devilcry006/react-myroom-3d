@@ -2,16 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import CameraController from "./components/CameraController";
 import Scene from "./Scene";
 import { useCameraStore } from './stores/cameraStore'
+import { OrbitControls } from "@react-three/drei";
 
 
 function App() {
 
   const toggleEnabled = useCameraStore((state) => state.setEnabled);
-
-  const handleClick = () => {
-    setEnabled();
-    console.log("Camera enabled state toggled");
-  }
   
   return (
     <div style={{ width: "100%", height: "100vh", position: "relative" }} id="canvas-container">
@@ -22,6 +18,7 @@ function App() {
           fov: 40,
         }}
       >
+        {/* <OrbitControls /> */}
         <CameraController />
         <Scene />
       </Canvas>
